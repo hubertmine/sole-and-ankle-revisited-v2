@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { COLORS, WEIGHTS } from '../../constants';
+import Icon from '../Icon';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
@@ -29,7 +30,12 @@ const Header = () => {
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
-        <Side />
+        <NavIcons>
+          <Icon id="search" />
+          <Icon id="menu" onClick={() => setShowMobileMenu(true)} />
+          <Icon id="shopping-bag" />
+        </NavIcons>
+        <SideRight />
       </MainHeader>
 
       <MobileMenu
@@ -42,20 +48,56 @@ const Header = () => {
 
 const MainHeader = styled.div`
   display: flex;
-  align-items: baseline;
+  align-items: center;
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+
+  @media ${({ theme }) => theme.breakpoints.tabletAndBelow} {
+    justify-content: space-between;
+    padding: 18px 32px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.phoneAndBelow} {
+    padding: 18px 16px;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
+
+  @media ${({ theme }) => theme.breakpoints.tabletAndBelow} {
+    display: none;
+  }
+`;
+
+const NavIcons = styled.div`
+  display: none;
+  
+  @media ${({ theme }) => theme.breakpoints.tabletAndBelow} {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 32px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.phoneAndBelow} {
+    gap: 16px;
+  }
 `;
 
 const Side = styled.div`
   flex: 1;
+`;
+
+const SideRight = styled.div`
+  flex: 1;
+
+  @media ${({ theme }) => theme.breakpoints.laptopAndBelow} {
+    display: none;
+  }
 `;
 
 const NavLink = styled.a`

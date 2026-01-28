@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { COLORS, WEIGHTS } from '../../constants';
+
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -68,6 +70,25 @@ table {
 
 html, body, #root {
   height: 100%;
+}
+
+:root {
+  --color-white: ${COLORS.white};
+  --color-primary: ${COLORS.primary};
+  --color-secondary: ${COLORS.secondary};
+  --color-gray-100: ${COLORS.gray[100]};
+  --color-gray-300: ${COLORS.gray[300]};
+  --color-gray-500: ${COLORS.gray[500]};
+  --color-gray-700: ${COLORS.gray[700]};
+  --color-gray-900: ${COLORS.gray[900]};
+  --color-gray-900-hsl-code: ${COLORS.gray.hslCode};
+  --font-family-sans-serif: 'Raleway', sans-serif;
+  --font-weight-medium: ${WEIGHTS.medium};
+  --font-weight-normal: ${WEIGHTS.normal};
+}
+
+:root {
+  --color-gray-transparent: hsl(var(--color-gray-900-hsl-code) / 0.8);
 }
 `;
 

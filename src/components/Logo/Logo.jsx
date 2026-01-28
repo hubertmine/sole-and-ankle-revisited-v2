@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { WEIGHTS } from '../../constants';
 
 const Logo = (props) => {
   return (
@@ -17,7 +16,8 @@ const Link = styled.a`
 
 const Wrapper = styled.h1`
   font-size: 1.5rem;
-  font-weight: ${WEIGHTS.bold};
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-sans-serif);
 `;
 
 export default Logo;

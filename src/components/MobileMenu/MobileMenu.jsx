@@ -42,7 +42,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 };
 
 const DialogContent = styled(Dialog.Content)`
-  background-color: ${COLORS.white};
+  background-color: var(--color-white);
   padding: 32px;
   padding-right: 22px;
   width: 80%;
@@ -68,13 +68,13 @@ const MobileMenuNav = styled.nav`
     text-decoration: none;
     color: inherit;
     font-size: 1.125rem;
-    font-weight: ${WEIGHTS.medium};
+    font-weight: var(--font-weight-medium);
     text-transform: uppercase;
-    color: ${COLORS.gray[900]};
+    color: var(--color-gray-900);
   }
 
   & > a:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 
 `;
@@ -89,13 +89,13 @@ const MobileMenuFooter = styled.footer`
     text-decoration: none;
     color: inherit;
     font-size: 0.875rem;
-    font-weight: ${WEIGHTS.normal};
-    color: ${COLORS.gray[700]};
+    font-weight: var(--font-weight-normal);
+    color: var(--color-gray-700);
   }
 `;
 
 const DialogOverlay = styled(Dialog.Overlay)`
-      background-color: ${COLORS.gray.transparent};
+      background-color: var(--color-gray-transparent);
       position: fixed;
       top: 0;
       left: 0;
